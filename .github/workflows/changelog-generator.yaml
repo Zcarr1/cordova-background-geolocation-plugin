@@ -1,0 +1,29 @@
+name: changelog-generator
+
+on:
+  push:
+    branches: [stable]
+
+jobs:
+  generate_changelog:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Generate changelog
+      uses: heinrichreimer/action-github-changelog-generator@v2.2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        sinceTag: '1.0.0-rc.1'
+        issues: true
+        issuesWoLabels: true
+        pullRequests: true
+        prWoLabels: true
+        unreleased: true
+        author: true
+        addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Update Changelog
+        file_pattern: CHANGELOG.md

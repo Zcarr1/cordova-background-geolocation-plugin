@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+apply from: '../common/VERSIONS.gradle'
+
+android {
+    compileSdkVersion project.ext.getCompileSdkVersion()
+    buildToolsVersion project.ext.getBuildToolsVersion()
+
+    defaultConfig {
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        minSdkVersion project.ext.getMinSdkVersion()
+        targetSdkVersion project.ext.getTargetSdkVersion()
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        //unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    testCompile testLibs.junit
+    testCompile testLibs.robolectric
+    compile libs.slf4j
+    compile project(':CordovaLib')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(path: ':common')
+}

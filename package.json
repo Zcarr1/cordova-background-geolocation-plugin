@@ -1,0 +1,44 @@
+{
+  "name": "cordova-background-geolocation-plugin",
+  "version": "2.0.10",
+  "description": "Cordova Background Geolocation Plugin",
+  "main": "./www/BackgroundGeolocation.js",
+  "types": "./www/BackgroundGeolocation.d.ts",
+  "cordova": {
+    "id": "cordova-background-geolocation-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haylltd/cordova-background-geolocation-plugin.git"
+  },
+  "keywords": [
+    "gps",
+    "location",
+    "geolocation",
+    "background",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova",
+    "phonegap"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova": ">=8.0.0",
+        "cordova-android": ">=8.0.0",
+        "cordova-ios": ">=6.0.0"
+      }
+    }
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/haylltd/cordova-background-geolocation-plugin/issues"
+  },
+  "homepage": "https://github.com/haylltd/cordova-background-geolocation-plugin#readme"
+}
